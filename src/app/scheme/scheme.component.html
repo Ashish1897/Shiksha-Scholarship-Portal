@@ -1,0 +1,109 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6" style="padding-bottom: 2%;">
+            <div class="card text-center" style="width: 25rem; ">
+                <img src="/assets/images/nec.jpg" class="card-img-top" style="height: 200px;" alt="...">
+
+                <div class="card-body">
+                    <h5 class="card-title">NEC Merit Scholarship</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Ministry of Development of North Eastern Region</h6>
+                    <br>
+                    <p class="card-text" style="font-size: 70%; text-align:left">
+                        <li>The full name of NEC Merit Scholarship is Financial Support To The Students Of NER For Higher Professional Courses.</li>
+                        <li>It provided financial support for only permanent NER resident students studying anywhere in India; and whose parents’ annual income doesn’t exceed Rs. 8 lakhs.</li>
+                        <li>It is not provided to the NER students who already avail benefits under any other scheme.</li>
+                        <li>Diploma, Degree, Post-graduate or registration in M.Phil. /PhD students of any institute recognized by the Government are eligible.</li>
+                    </p>
+                </div>
+                <button  (click)="list()"  type="button" class="btn btn-warning btn-rounded" *ngIf="!loginService.isUserLoggedIn()">Apply</button>
+
+            </div>
+        </div>
+        <div class="col-sm-6" style="padding-bottom: 2%;">
+            <div class="card text-center" style="width: 25rem;">
+                <img src="/assets/images/central.jpg" class="card-img-top" style="height: 200px;" alt="...">
+                <div class="card-body" style="height: 18.5rem;">
+                    <h5 class="card-title">Central Sector Scheme Of Scholarships For College And University Students</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Ministry of Human Resources and Development</h6>
+                    <br>
+                    <p class="card-text" style="font-size: 70%; text-align:left">
+                        <li>82000 scholarships are awarded under this scheme to meritorious students from low income families.</li>
+                        <li>It is awarded for regular graduate, post-graduate and professional degree programmes.</li>
+                        <li>Students between the ages of 18 and 25 from different state boards; having above 80 percent marks in Class 12th are eligible.</li>
+                    </p>
+                </div>
+                <button (click)="list()" *ngIf="!loginService.isUserLoggedIn()" type="button" class="btn btn-warning btn-rounded">Apply</button>
+
+            </div>
+        </div>
+
+        <div class="col-sm-6" style="padding-bottom: 2%;">
+            <div class="card text-center" style="width: 25rem;">
+                <img src="/assets/images/fellowship.png" class="card-img-top" style="height: 200px;" alt="...">
+                <div class="card-body" style="height: 20rem;">
+                    <h5 class="card-title">National Fellowship and Scholarship for Higher Education of ST Students</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Ministry of Tribal Affairs</h6>
+                    <br>
+                    <p class="card-text" style="font-size: 70%; text-align:left">
+                        <li>It is a scholarship for ‘Formally Top Class Education for Scheduled Tribe Students.</li>
+                        <li>Rajiv Gandhi National Fellowship (RGNF) for ST students and Top Class Education for ST Students were two central sector schemes that merged to create National Fellowship and Scholarship for ST Students Higher Education.</li>
+                        <li>It has two components – Fellowship (Introduced in 2014) and Scholarship (Introduced in 2015.</li>
+                        <li>Fellowship is awarded for ST students for higher education courses like PhD, M.Phil etc, and Scholarships for ST students to opt graduation or post-graduation courses in government or private institutions.</li>
+                    </p>
+                </div>
+                <button (click)="list()"  *ngIf="!loginService.isUserLoggedIn()" type="button" class="btn btn-warning btn-rounded">Apply</button>
+
+            </div>
+        </div>
+        <div class="col-sm-6" style="padding-bottom: 2%;">
+            <div class="card text-center" style="width: 25rem;">
+                <img src="/assets/images/topclass.jpg" class="card-img-top" style="height: 200px;" alt="...">
+                <div class="card-body" style="height: 20rem;">
+                    <h5 class="card-title">Top Class Education Scheme for SC Students</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Ministry of Social Justice and Empowerment</h6>
+                    <br>
+                    <p class="card-text" style="font-size: 70%; text-align:left">
+                        <li>The scheme was approved in 2007.</li>
+                        <li>4200 scholarships are provided (30 percent slots for SC Girls.)</li>
+                        <li>Those SC students having total annual family income from all sources up to Rs. 8.00 lakh and having secured admission in a full-time prescribed course in any of the notified institutions according to the general selection criteria
+                            prescribed by the concerned institution, will be eligible for scholarship under the Scheme to the extent of the number of scholarships (slots) allocated to the institution for the course.</li>
+                    </p>
+                </div>
+                <button (click)="list()" *ngIf="!loginService.isUserLoggedIn()"  type="button" class="btn btn-warning btn-rounded">Apply</button>
+
+            </div>
+        </div>
+        <div class="col-sm-6" style="padding-bottom: 2%;">
+            <div class="card text-center" style="width: 25rem;">
+                <img src="/assets/images/pragati.jpg" class="card-img-top" style="height: 200px;" alt="...">
+                <div class="card-body" style="height: 20rem;">
+                    <h5 class="card-title">Pragati Scholarship Scheme For Girl Students (Technical Degree)</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">All India Council for Technical Education (AICTE)</h6>
+                    <br>
+                    <p class="card-text" style="font-size: 70%; text-align:left">
+                        <li>Number of scholarships per annum: 4000 </li>
+                        <li>‘One Girl’ per family and it can be extended for Two Girl Child per family where the family income is less than Rs. 8 Lakh /annum.</li>
+                        <li>The candidates will be selected on Merit at the qualifying examination to pursue technical education from amongst such candidates.</li>
+                        <li>The candidates should have been admitted to 1st year of the Degree or Diploma in any of the AICTE approved institute during the current Academic Year through centralized admission process of the State/Centre Govt.</li>
+                    </p>
+                </div>
+                <button (click)="list()" *ngIf="!loginService.isUserLoggedIn()" type="button" class="btn btn-warning btn-rounded">Apply</button>
+            </div>
+        </div>
+        <div class="col-sm-6" style="padding-bottom: 2%;">
+            <div class="card text-center" style="width: 25rem;">
+                <img src="/assets/images/rankholder.jpg" class="card-img-top" style="height: 200px;" alt="...">
+                <div class="card-body" style="height: 20rem;">
+                    <h5 class="card-title">PG Scholarship For University Rank Holders</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">University Grants Commission (UGC)</h6>
+                    <br>
+                    <p class="card-text" style="font-size: 70%; text-align:left">
+                        <li>It is awarded to only Ist and IInd rank holders.</li>
+                        <li>The awardees, under this scheme, can pursue their Postgraduate programme in any area of specialization in any institution of higher learning in the country</li>
+                    </p>
+                </div>
+                <button (click)="list()" *ngIf="!loginService.isUserLoggedIn()" type="button" class="btn btn-warning btn-rounded">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>

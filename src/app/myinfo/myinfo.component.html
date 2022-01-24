@@ -1,0 +1,167 @@
+<div >
+  
+  <div style="background-color: #cbee48; padding: 50px; margin: 50px; font-family: serif;">
+    <div class="row">
+      <p>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+      <div class="col-md-4">
+        <aside>
+          <div *ngIf="gen; else male">
+            <img src="/assets/images/profile.png" class="img-fluid rounded-start" alt="...">
+          </div>
+          <ng-template #male>
+            <img src="/assets/images/man.png" class="img-fluid rounded-start" alt="...">
+          </ng-template>
+        </aside>
+        <div class="card">
+          <img src="/assets/images/bank2.png"   class="card-img-top text-center"  alt="...">
+          <div class="card-body">
+            <dt>Account No:</dt>
+              <dd>{{student.accNo}}</dd>
+
+              <dt>Bank Name:</dt>
+              <dd>{{student.bankName}}</dd>
+
+              <dt>Ifsc Code:</dt>
+              <dd>{{student.ifscCode}}</dd>
+              
+              <dt>Branch Name:</dt>
+              <dd>{{student.bankAddress}}</dd>
+
+              <dt>State:</dt>
+              <dd>{{student.state}}</dd>
+          </div>
+        </div>
+        <br>
+        <button (click)="list()" class="btn btn-secondary">Back to DashBoard</button>
+      </div>
+      <div class="col-md-8">
+        <div style="background-color: #069e2c;">
+          <br>
+          <h2 align="center">My Details</h2>
+          <br>
+        </div>
+        <br>
+        <div class="card mb-3" style="max-width: 740px;">
+          <div class="row">
+            <div class="col-sm-4">
+              <img src="/assets/images/basic.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-sm-4">
+              <br>
+              <dt>First Name:</dt>
+              <dd>{{student.fname}}</dd>
+
+              <dt>Last Name:</dt>
+              <dd>{{student.lname}}</dd>
+
+              <dt>Gender:</dt>
+              <dd>{{student.gender}}</dd>
+              <dt>Father Name:</dt>
+              <dd>{{student.fatherName}}</dd>
+              <dt>Address:</dt>
+              <dd>{{student.street}}, {{student.city}} - {{student.pincode}} </dd>
+              
+            </div>
+            <div class="col-sm-4">
+              <br>
+              <dt>Mobile No:</dt>
+              <dd>{{student.mobNo}}</dd>
+
+              <dt>Date of Birth:</dt>
+              <dd>{{student.dob |date}}</dd>
+
+              <dt>Email:</dt>
+              <dd>{{student.email}}</dd>
+              
+              <dt>Mother Name:</dt>
+              <dd>{{student.motherName}}</dd>
+
+              <dt>State:</dt>
+              <dd>{{student.state}}</dd>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" style="max-width: 740px;">
+          <div class="row">
+            <div class="col-sm-4">
+              <img src="/assets/images/edudoc.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-sm-4">
+              <br>
+              <dt>Qualification:</dt>
+              <dd>{{student.highestQual}}</dd>
+
+              <dt>College/School Name:</dt>
+              <dd>{{student.collegeName}}</dd>
+
+              <dt>Roll Number:</dt>
+              <dd>{{student.rollNumber}}</dd>
+              <dt>Percentage:</dt>
+              <dd>{{student.percentage}}</dd>
+              
+              
+              <dt>Passing Year:</dt>
+              <dd>{{student.year}}</dd>
+            </div>
+            <div class="col-sm-4">
+              <br>
+              <dt>Category:</dt>
+              <dd>{{student.category}}</dd>
+
+              <dt>Family Income: </dt>
+              <dd>{{student.familyIncome}}</dd>
+
+              <dt>Income Certificate No:</dt>
+              <dd>{{student.incomeCertiNo}}</dd>
+
+              <dt>Domicile Certificate No:</dt>
+              <dd>{{student.domicileCertiNo}}</dd>
+
+              <dt>Scholarship Code Applied For</dt>
+              <dd>{{student.scode}}</dd>
+
+              
+
+            </div>
+          </div>
+        </div>        
+        <button (click)="show()" class="btn btn-secondary">Show Status</button>
+        <br>
+    <br>
+      </div>
+      
+
+    </div>
+
+    
+
+    <div *ngIf="forward" class="card">
+      <h5 class="card-header" style="background-color:green;">STATUS</h5>
+      <div class="card-body">
+        <h5 class="card-title">Forwaded</h5>
+        <p class="card-text">In 15 Business Days Your Scholarship Amount {{amount}} will be credited in your Bank.</p>
+      </div>
+    </div>
+
+    <div *ngIf="reject" class="card">
+      <h5 class="card-header" style="background-color:red;">STATUS</h5>
+      <div class="card-body">
+        <h5 class="card-title">Rejected</h5>
+        <p class="card-text">Your Scholarship has been rejected due to lack of some documents or you are not upto
+          elligible for this scholarship.</p>
+      </div>
+    </div>
+
+    <div *ngIf="pending" class="card">
+      <h5 class="card-header" style="background-color:#ffbc3b;">STATUS</h5>
+      <div class="card-body">
+        <h5 class="card-title">Pending</h5>
+        <p class="card-text">Your Scholarship is pending with the respected authority.</p>
+      </div>
+    </div>
+
+    <br>
+
+    <br>
+    <p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+  </div>

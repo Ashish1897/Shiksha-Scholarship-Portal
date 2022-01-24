@@ -1,0 +1,87 @@
+<div class="container py-5" style="background-color: #ffbc3b;">
+    <div class="card mb-3">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="/assets/images/dash.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <br>
+                    <br>
+                    <br>
+                    <h2 class="card-title">Welcome to the Student Dashboard! </h2>
+                    <h3 class="card-text">Hi, {{email}}</h3>
+                    <p class="card-text"><small class="text-muted"></small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h4 class="card-text">Here is a list of activities you can perform:</h4>
+        <ul>
+            <li>Check Your Scholarship Status</li>
+            <li>Apply for Scholarship</li>
+        </ul>
+    </div>
+
+    <div class="row py-5">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">My Details</h5>
+                    <p class="card-text">Get access to all of your information and scholarship status.</p>
+                    <button (click)="studentDetails(email)" class="btn btn-success">Show My Details</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Scholarship</h5>
+                    <p class="card-text">It provides the information about the scholarship schemes available.</p>
+                    <button (click)="shows()" class="btn btn-success">Show Scholarship List</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div [hidden]="!submitted">
+        <br>
+        <h1>You Have Successfully Applied!</h1>
+        <br>
+    </div>
+    
+    <div [hidden]="!show" class="py-5">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 align="center"> List of Scholarship </h2>
+                </div>
+                <div class="panel-body">
+                    <table class="table styled-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>SCode</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let s of scheme | async">
+                                <td>{{ s.name | uppercase }} </td>
+                                <td>{{ s.scode }}</td>
+                                <td>
+                                    <button (click)="schemeApplied(email,s.scode)" class="btn btn-danger"
+                                        style="margin-left: 10px">Apply</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

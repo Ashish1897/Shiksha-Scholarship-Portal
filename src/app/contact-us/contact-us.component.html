@@ -1,0 +1,123 @@
+<div class="row">
+
+    <div class="container col-lg-5">
+        <h2>Important Contacts</h2>
+        <a class="card">
+            <h3>+91 9378293765</h3>
+            <p class="small">Education Minister</p>
+            <div class="go-corner" href="#">
+                <div class="go-arrow">
+                    →
+                </div>
+            </div>
+        </a>
+
+        <a class="card">
+            <h3>+91 6357493789</h3>
+            <p class="small">Scholorship Officer</p>
+            <div class="go-corner" href="#">
+                <div class="go-arrow">
+                    →
+                </div>
+            </div>
+        </a>
+
+        <a class="card">
+            <h3>+91 7368903651</h3>
+            <p class="small">Deputy Director</p>
+            <div class="go-corner" href="#">
+                <div class="go-arrow">
+                    →
+                </div>
+            </div>
+        </a>
+
+
+        <a class="card">
+            <h3>+91 8253749382</h3>
+            <p class="small">Joint Director</p>
+            <div class="go-corner" href="#">
+                <div class="go-arrow">
+                    →
+                </div>
+            </div>
+        </a>
+
+        <a class="card">
+            <h3>+91 7364728374</h3>
+            <p class="small">State Education Officer</p>
+            <div class="go-corner" href="#">
+                <div class="go-arrow">
+                    →
+                </div>
+            </div>
+        </a>
+
+        <a class="card">
+            <h3>+91 9837483909</h3>
+            <p class="small">Student Welfare Cell</p>
+            <div class="go-corner" href="#">
+                <div class="go-arrow">
+                    →
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+    <div class="background col-lg-7">
+        <div class="container">
+            <div class="screen">
+                <div class="screen-header">
+                    <div class="screen-header-left">
+                        <div class="screen-header-button close"></div>
+                        <div class="screen-header-button maximize"></div>
+                        <div class="screen-header-button minimize"></div>
+                    </div>
+                    <div class="screen-header-right">
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                    </div>
+                </div>
+                <div class="screen-body ">
+                    <div class="screen-body-item col-md-4 left">
+                        <div class="title" style="color: white;">
+                            <span>CONTACT</span>&nbsp;
+                            <span>US</span>
+                        </div>
+
+                    </div>
+                    <div class="screen-body-item col-md-8">
+                        <div class="app-form-group">
+                            <form (ngSubmit)="onSubmit()" ngNativeValidate>
+                                <div class="app-form-group">
+                                    <input type="text" class="app-form-control" placeholder="Name" required
+                                        [(ngModel)]="contactus.name" name="name">
+                                </div>
+                                <div class="app-form-group">
+                                    <input type="email" class="app-form-control" placeholder="Email" required
+                                        [(ngModel)]="contactus.email" name="email">
+                                </div>
+                                <div class="app-form-group">
+                                    <input type="text" class="app-form-control" placeholder="Contact No" required
+                                        [(ngModel)]="contactus.mobNo" name="mobNo">
+                                </div>
+                                <div class="app-form-group">
+                                    <textarea class="app-form-control" placeholder="Message" required
+                                        [(ngModel)]="contactus.msg" name="msg"></textarea>
+                                </div>
+                                <div class="app-form-group buttons">
+                                <button  type="submit" style="color: white;" class=" btn brn-primary form-button">SEND</button>
+                            </div>
+                            </form>    
+                            <div [hidden]="!submitted">
+                                <p>We got Your Message! We will contact you soon. </p>
+                            </div>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.container{
+    margin: 50px;
+    padding: 50px; 
+    font-family: serif;
+    background-color: #ffbc3b;
+}
+
+.detail{
+    background-color: white;
+    padding: 50px;
+    margin: 50px;
+}

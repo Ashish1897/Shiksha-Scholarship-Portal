@@ -1,0 +1,15 @@
+.container{
+    color: #000000;
+    background-color: #ffbc3b;
+    padding: 50px;
+    margin: 50px;
+}
+
+h3{
+    color: #334756;
+}
+.new{
+    padding: 20px;
+    background-color:    #334756;
+    border-radius:12px ;
+}

@@ -1,0 +1,194 @@
+<div class="container" style="background-color:#ffbc3b;" >
+
+    <div class="container" id="forms" style="width: 800px; background-color: #334756;">
+        <br>
+        <h2 class="text-center">Registration Form</h2>
+        <br>
+
+        <form class="row g-3 center_div" (ngSubmit)="onSubmit()" ngNativeValidate>
+            <div class="col-md-6">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.fname" name="fname">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.lname" name="lname">
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Gender</label>
+                <select class="form-select" required [(ngModel)]="student.gender" name="gender">
+                    <option value="Male"> Male</option>
+                    <option value="Female">Female </option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Date of Birth</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.dob" name="dob"
+                    placeholder="(YYYY-MM-DD)">
+            </div>
+            <div class="col-12">
+                <label class="form-label">Aadhar Number</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.aadharNumber" name="aadharNumber">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" required [(ngModel)]="student.email" name="email">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Mobile No</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.mobNo" name="mobNo" pattern="[0-9]{10}" title="Mobile Number should be of only 10 digits.">
+            </div>
+            <div class="col-12">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" required [(ngModel)]="student.password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Password shoould be of atleast 6 characters or more, with atleast one uppercase and one lowercase letter, and numbers.">
+                
+            </div>
+            <div class="col-12">
+                <label class="form-label">Mother Name</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.motherName" name="motherName">
+            </div>
+            <div class="col-12">
+                <label class="form-label">Father Name</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.fatherName" name="fatherName">
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Street</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.street" name="street">
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">City</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.city" name="city">
+            </div>
+            <div class="col-md-2">
+                <label for="inputZip" class="form-label">Pincode</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.pincode" name="pincode">
+            </div>
+            <div class="col-12">
+                <label for="inputState" class="form-label">State</label>
+                <select id="inputState" class="form-select" required [(ngModel)]="student.state" name="state">
+                    <option value="Andhra Pradesh"> Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh"> Arunachal Pradesh</option>
+                    <option value="Assam"> Assam</option>
+                    <option value="Bihar"> Bihar</option>
+                    <option value="Chhattisgarh"> Chhattisgarh</option>
+                    <option value="Goa"> Goa</option>
+                    <option value="Gujrat"> Gujrat</option>
+                    <option value="Haryana"> Haryana</option>
+                    <option value="Himachal Pradesh"> Himachal Pradesh</option>
+                    <option value="Jammu and Kashmir"> Jammu and Kashmir</option>
+                    <option value="Jharkhand"> Jharkhand</option>
+                    <option value="Karnataka"> Karnataka</option>
+                    <option value="Kerala"> Kerala</option>
+                    <option value="Madhya Pradesh"> Madhya Pradesh</option>
+                    <option value="Maharashtra"> Maharashtra</option>
+                    <option value="Manipur"> Manipur</option>
+                    <option value="Meghalaya"> Meghalaya</option>
+                    <option value="Mizoram"> Mizoram</option>
+                    <option value="Nagaland"> Nagaland</option>
+                    <option value="Odisha"> Odisha</option>
+                    <option value="Punjab"> Punjab</option>
+                    <option value="Rajasthan"> Rajasthan</option>
+                    <option value="Assam"> Sikkim</option>
+                    <option value="Tamil Nadu"> Tamil Nadu</option>
+                    <option value="Telangana"> Telangana</option>
+                    <option value="Tripura"> Tripura</option>
+                    <option value="Uttar Pradesh"> Uttar Pradesh</option>
+                    <option value="Uttarakhand"> Uttarakhand</option>
+                    <option value="West Bengal"> West Bengal</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Category</label>
+                <select id="category" class="form-select" required [(ngModel)]="student.category" name="category">
+                    <option value="General"> General</option>
+                    <option value="SC/ST">SC/ST </option>
+                    <option value="OBC">OBC</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Total Family Income</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.familyIncome" name="familyIncome">
+            </div>
+            <div class="col-12">
+                <label class="form-label">Income Certificate No</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.incomeCertiNo"
+                    name="incomeCertiNo">
+            </div>
+            <div class="col-12">
+                <label class="form-label">Domicile Certificate No</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.domicileCertiNo"
+                    name="domicileCertiNo">
+            </div>
+
+            <div class="col-md-4">
+                <label for="highestQual">Highest Qualification</label>
+                <select class="form-select" required [(ngModel)]="student.highestQual" name=" highestQual">
+                    <option value="High School">High School </option>
+                    <option value="Senior Secondary">Senior Secondary</option>
+                    <option value="Graduate">Graduate</option>
+                    <option value="Post Graduate">Post Graduate</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-8">
+                <label for="collegeName">College/School Name</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.collegeName" name="collegeName">
+            </div>
+            <div class="col-md-4">
+                <label for="rollNumber">Roll No</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.rollNumber" name="rollNumber">
+            </div>
+
+            <div class="col-md-4">
+                <label for="percentage">Percentage</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.percentage" name="percentage" pattern="[0-9]+(\.[0-9]{1,2})?%?" title="This must be a number with up to 2 decimal places.">
+            </div>
+            <div class="col-md-4">
+                <label for="year">Passing Year</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.year" name="year">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="bankName">Bank Name</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.bankName" name="bankName">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="accNo">Account No</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.accNo" name="accNo">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="ifscCode">Ifsc Code</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.ifscCode" name="ifscCode">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="bankAddress">Branch Name</label>
+                <input type="text" class="form-control" required [(ngModel)]="student.bankAddress" name="bankAddress">
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        I accept all the Information given by me is correct.
+                    </label>
+                </div>
+            </div>
+            <br>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+        <br>
+    </div>
+
+    <div [hidden]="!submitted">
+        <br>
+        <h4>Registration SuccessFull!</h4>
+        <br>
+        <button (click)="goto()" class="btn btn-primary">Go To Login</button>
+        <br>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+<div  class="container py-5" style="background-color: #ffbc3b;">
+    <div class="card mb-3">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="/assets/images/admin.png" class="img-fluid rounded-start" style="height: 250px; margin: 20px;" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <br>
+              <h2 class="card-title">Welcome to the Admin Dashboard!</h2>
+              <h3>Hi, Admin</h3>
+              <h4 class="card-text">Click on Show Details to get The List of Students.</h4>
+              <p>And perform necessary action.</p>
+              <p class="card-text"><small class="text-muted"></small></p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col-6" >
+      
+      &nbsp;
+      
+      &nbsp;
+      
+  </div>
+<div class="row" style="padding: 20px">
+  <div class="card col-sm-4" style="width: 14rem;">
+    <img src="/assets/images/student.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title" style="color: #334756; font-weight: bold;">Student List</h5>
+      <p class="card-text">List of all the students who applied for the Scholarship and their full information. </p>
+      <button (click)="list()" class="btn btn-success">Show Students List</button>
+    </div>
+  </div>
+  <div class="card col-sm-4" style="padding: 20px;" >
+    <img src="/assets/images/scheme.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title" style="color: #334756; font-weight: bold;">Scholarship</h5>
+      <p class="card-text">It provides the information about the scholarship schemes available. </p>
+      <button (click)="show()" class="btn btn-primary">Show Scholarship List</button>
+    </div>
+  </div>
+  <div class="card col-sm-4" style="width: 14rem;">
+    <img src="/assets/images/query.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title" style="color: #334756; font-weight: bold;">Student Queries</h5>
+      <p class="card-text">It will show you all the aplicants query they have sent and you reply to them from there.</p>
+      <button (click)="showQueries()" class="btn btn-secondary">Student Queries</button>
+    </div>
+  </div>
+</div>
+    
+    <div [hidden]="!submitted">
+        <div class="row">
+            <div class="panel panel-primary container">
+                <div class="panel-heading">
+                    <h2 align="center"> Student Queries</h2>
+                </div>
+                <div class="panel-body">
+                    <table class="table styled-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Message</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let s of contactus | async">
+                                <td>{{ s.name | uppercase }} </td>
+                                <td>{{ s.email }}</td>
+                                <td>{{s.msg}}</td>
+                                <td>
+                                    <a href="mailto:{{s.email}}" class="btn btn-danger"
+                                        >Reply</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div [hidden]="!hide" class="panel panel-primary container">
+      <div class="panel-heading">
+          <h2 align="center"> List of Scholarship Available </h2>
+      </div>
+      <div class="panel-body">
+          <table class="table styled-table">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Scode</th> 
+                      <th>Amount</th>                   
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let s of scholarship | async">
+                      <td>{{ s.name}}</td>
+                      <td>{{ s.scode |uppercase }}</td>
+                      <td>{{ s.amount | currency:"INR"}}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  
+      <button (click)="add()" class="btn btn-danger" style="margin-left: 10px">Add New</button>
+      &nbsp;
+  </div>
+
+<div [hidden]="!hide2" class="panel panel-primary container">
+  <div class="panel-heading">
+      <h2 align="center"> List of Students </h2>
+  </div>
+  <div class="panel-body">
+      <table class="table styled-table">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Family Income</th>
+                  <th>Form Status</th>
+                  <th>Actions</th>                    
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let s of student | async">
+                  <td>{{ s.fname |uppercase }} {{ s.lname |uppercase }}</td>
+                  <td>{{ s.email }}</td>
+                  <td>{{ s.familyIncome| currency:"INR" }}</td>
+                  <td>{{s.status}}</td>
+                  <td>
+                      <button (click)="studentDetails(s.email)" class="btn btn-danger" style="margin-left: 10px">Details</button>
+                  </td>
+                  
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+</div>

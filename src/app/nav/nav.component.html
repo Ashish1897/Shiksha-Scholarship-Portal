@@ -1,0 +1,63 @@
+<!-- navbar -->
+<div class="navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" routerLink="home" ><img src="/assets/images/logo.png" width="150px" height="110px" alt="logo"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav text-center">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="aboutus" routerLinkActive="active">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="scheme" routerLinkActive="active">Schemes</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" routerLink="doc" routerLinkActive="active">Applicants FAQ</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="contactus" routerLinkActive="active">CONTACT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " routerLink="register" *ngIf="!loginService.isUserLoggedIn()" routerLinkActive="active" role="button">
+                        Register
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " routerLink="admin_dashboard" *ngIf="loginService.isUserLoggedIn() && loginService.loginNav(); else slog" routerLinkActive="active" role="button">
+                        Dashboard
+                    </a>
+                </li>              
+                  <ng-template #slog>
+                    <li class="nav-item">
+                        <a class="nav-link " *ngIf="loginService.isUserLoggedIn()"routerLink="student_dashboard" routerLinkActive="active" role="button">
+                            Dashboard
+                        </a>
+                    </li>
+                  </ng-template>
+                  <li class="nav-item dropdown view">
+                    <a class="nav-link dropdown-toggle" *ngIf="!loginService.isUserLoggedIn()" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Login
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" routerLink="admin" routerLinkActive="active">Admin</a>
+                        <a class="dropdown-item" routerLink="login" routerLinkActive="active">Student</a>
+
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link "  *ngIf="loginService.isUserLoggedIn()" routerLink="logout" routerLinkActive="active" role="button">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
